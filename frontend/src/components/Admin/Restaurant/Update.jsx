@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import AdminNavbar from '../navbar.jsx'
 import Form from 'react-bootstrap/Form';
