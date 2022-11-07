@@ -44,4 +44,4 @@ jobs:
         user_email: 'github-actions[bot]@users.noreply.github.com'
         github_token: ${{ secrets.Frontend_Deployment_Token }}
         # repository: ${{ github.repository }}
-        repository: ${{ https://github.com/Kazim786-dev/Devops }}
+        repository: ${{ github.Devops }}
