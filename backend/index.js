@@ -3,13 +3,15 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import cors from "cors"
+import dotenv from 'dotenv'
+dotenv.config()
 
-const url = 'mongodb://localhost/FoodDeliveryDB'
+const uri = process.env.ATLAS_URI;
+const port = process.env.PORT || 8000;
 
 const app = express()
-const port = 3001;
 
-mongoose.connect(url, {useNewUrlParser:true})
+mongoose.connect(uri, {useNewUrlParser:true})
 const con = mongoose.connection
 
 con.on('open', () => {
@@ -27,6 +29,8 @@ app.use('/admin/restaurant',ManageResbyAdmin)
 //Registration
 import register from './routes/registrationRouter.js'
 app.use('/',register)
+
+
 
 app.listen(port, () => {
     console.log(`Server started at port ${port}`)
